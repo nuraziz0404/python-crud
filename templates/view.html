@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow mb-4 p-4">
+    <div class="row">
+        <div class="col-sm-18 col-md-9">
+            <h3 class="float float-left mx-auto"><strong>{{data[2]}}</strong></h3>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="/" style="text-decoration: none;" class="float float-right mx-auto"><button type="button" class="btn btn-primary">Back</button></a>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row">
+        <div class="container-fluid" style="margin: -1vh;">
+            <div class="container-fluid bg-light rounded">
+                <div class="pt-3 pr-2">
+                    {% for x in isi %}
+                        <p style="font-size: large; text-align: justify; margin-bottom: 0px;" class="text-dark">{{x}}</p>
+                    {% endfor %}
+                </div>
+                <div class="row pb-2" style="justify-content: right;">
+                    <i class="float float-right">{{data[1]}}</i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

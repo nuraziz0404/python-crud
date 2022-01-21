@@ -1,0 +1,1 @@
+nodemon -e 'py html' -x python app.py

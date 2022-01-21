@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow mb-4 p-4">
+    <div class="row">
+        <div class="col-sm-18 col-md-9">
+            <h3 class="float float-left mx-auto"><strong>Edit:</strong></h3>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="/" style="text-decoration: none;" class="float float-right mx-auto"><button type="button" class="btn btn-primary">Back</button></a>
+        </div>
+    </div>
+    <hr class="divider">
+    <div class="row">
+        <div class="container-fluid">
+            <form action="/update" id="formx" enctype="application/x-www-form-urlencoded">
+                <input type="hidden" name="id" value="{{data[0]}}">
+                <div class="form-group">
+                  <label>Judul:</label>
+                  <input type="text" class="form-control" name="judul" placeholder="Judul" value="{{data[2]}}" form="formx">
+                </div>
+                <div class="form-group">
+                    <label>Isi:</label>
+                    <textarea name="isi" rows="20" form="formx" placeholder="Isi" class="form-control">{{isi}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

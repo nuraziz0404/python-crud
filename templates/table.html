@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow mb-4 p-4">
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <h2 class="float float-left"><strong>Daftar berita:</strong></h2>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <a href="/create" style="text-decoration: none;" class="float float-right"><button type="button" class="btn btn-primary">New Post</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Judul</th>
+                        <th scope="col">Tanggal</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                {% for i in range(c) %}
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td><a href="/view?id={{id}}" style="text-decoration: none;" class="table">{{table[i][2]}}</a></td>
+                    <td>{{table[i][1]}}</td>
+                    <td>
+                        <a href="/view?id={{table[i][0]}}" style="text-decoration: none;" class="table"><button type="button" class="btn btn-primary">View</button></a>
+                        <a href="/edit?id={{table[i][0]}}"><button type="button" class="btn btn-secondary">Edit</button></a>
+                        <a href="/delete?id={{table[i][0]}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
